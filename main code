@@ -1,10 +1,13 @@
-	import java.io.*;
+	import java.text.NumberFormat;
+    import java.util.Locale;
+    import java.io.*;
 	import java.util.*;
 
 		public class ATM {
 	
 
 		public static void main(String[] args) {
+			NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
 				File f = null;
 				File fo=null;
 				PrintWriter fout=null;
@@ -38,9 +41,9 @@
 				amount=k.nextInt();
           
 				fout.println(lname+" "+fname);
-				fout.println("Checking balance before transaction: "+ beforebal);
+				fout.println("Checking balance before transaction: "+ defaultFormat.format(beforebal));
 				fout.println("Transaction Type: "+transtype);
-				fout.println("Transaction Amount: "+ amount);
+				fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   switch(transtype){
       
 		   		case 'W':
@@ -48,21 +51,21 @@
 		   				if(beforebal<0)
 		   				{
 		   					afterbal=beforebal;
-		   					fout.println("Check balance after transaction: "+ afterbal);
+		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You have a negative amount in your"
 		   					+ " account cannot withdraw any funds");
 		   				}
 		   				else if (amount>beforebal)
 		   				{
 		   					afterbal=beforebal;
-		   					fout.println("Check balance after transaction: "+ afterbal);
+		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You can not take out more than you have");
     		 
 		   				}
 		   				else if(amount<0)
 		   				{
 		   					afterbal=beforebal;
-		   					fout.println("Check balance after transaction: "+ afterbal);
+		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You can not subtract negative"
 		   					+ " funds to your account");
 		   				}
@@ -70,7 +73,7 @@
 		   				{
     		  
 		   					afterbal=(beforebal-amount);
-		   					fout.println("Check balance after transaction: "+ afterbal);
+		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					
 		   					if(afterbal<minbal)
 		   				    fout.println("Warning: Your account balance is below the $300"
@@ -86,26 +89,26 @@
     	  if(amount<0)
     	  {
     		  afterbal=beforebal; 
-    		  fout.println("Check balance after transaction: "+ afterbal);
+    		  fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
     		  fout.println("Error: You can not add negative "
     	  	  + "funds to your account");
     	  }
     	  else
     	  {
     		  afterbal=beforebal+amount;
-        	  fout.println("Check balance after transaction: "+ afterbal);
+        	  fout.println("Check balance after transaction: "+defaultFormat.format(afterbal));
     	  }
     	  
     	  break;
     	  
       	case 'R':
-      		fout.println("Checking current balance: "+ beforebal);
+      		fout.println("Checking current balance: "+ defaultFormat.format(beforebal));
       		break;
     	  
       default:
          { 
         	 afterbal=beforebal;
-        	 fout.println("Checking balance after transaction: "+afterbal);
+        	 fout.println("Checking balance after transaction: "+ defaultFormat.format(afterbal));
         	 fout.println("Error:Invalid transaction type");
         	 break;
         	 }
