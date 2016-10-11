@@ -1,0 +1,53 @@
+Turing, Joe
+Checking balance before transaction: 4124.5
+Transaction Type: D
+Transaction Amount: 200
+Check balance after transaction: 4324.5
+=====================================================================
+Babbage, Charles
+Checking balance before transaction: 300.0
+Transaction Type: D
+Transaction Amount: 100
+Check balance after transaction: 400.0
+=====================================================================
+Backus, Sam
+Checking balance before transaction: 350.25
+Transaction Type: W
+Transaction Amount: 51
+Check balance after transaction: 299.25
+Warning: Your account balance is below the $300 minimum balance limit
+=====================================================================
+Hopper, Sam
+Checking balance before transaction: 600.5
+Transaction Type: X
+Transaction Amount: 600
+Checking balance after transaction: 600.5
+Error:Invalid transaction type
+=====================================================================
+McCarthy, Robert
+Checking balance before transaction: 1000.0
+Transaction Type: R
+Transaction Amount: 0
+Checking current balance: 1000.0
+=====================================================================
+Atanasoff, Jack
+Checking balance before transaction: 200.0
+Transaction Type: W
+Transaction Amount: 200
+Check balance after transaction: 0.0
+Warning: Your account balance is below the $300 minimum balance limit
+=====================================================================
+Stroustrup, Anne
+Checking balance before transaction: 300.75
+Transaction Type: W
+Transaction Amount: 301
+Check balance after transaction: 300.75
+Error:You can not take out more than you have
+=====================================================================
+Hollerith, Amanda
+Checking balance before transaction: 500.0
+Transaction Type: W
+Transaction Amount: -2
+Check balance after transaction: 500.0
+Error:You can not subtract negative funds to your account
+=====================================================================
