@@ -5,8 +5,8 @@ public class ATM {
 
 
 	public static void main(String[] args) {
-   File f =  new File ("transactions.txt");
-   File fo= new File("statement.txt");
+   File f = null;
+   File fo=null;
    PrintWriter fout=null;
    Scanner k=null;
    String fname="";
@@ -15,7 +15,9 @@ public class ATM {
    double afterbal=0.0;
    char transtype=' ';
    int amount=0;
-   final int minbal = 300;
+   f= new File ("transactions.txt");
+   fo=new File("statement.txt");
+   final double minbal = 300.0;
     try {
 		k=new Scanner(f);
 		fout= new PrintWriter(fo);
@@ -23,16 +25,17 @@ public class ATM {
 		
 		e.printStackTrace();
 	}
-      fname=k.next();
-      lname=k.next();
-      beforebal=k.nextDouble();
-      transtype=k.next().charAt(0);
-      amount=k.nextInt();
-      
+    
       
       
       
       while(k.hasNext()){
+    	  fname=k.next();
+          lname=k.next();
+          beforebal=k.nextDouble();
+          transtype=k.next().charAt(0);
+          amount=k.nextInt();
+          
       fout.println(lname+" "+fname);
       fout.println("Checking balance before transaction: "+ beforebal);
       fout.println("Transaction Type: "+transtype);
@@ -45,3 +48,4 @@ k.close();
 fout.close();
 	} 
 }
+
