@@ -1,53 +1,53 @@
 Turing, Joe
-Checking balance before transaction: 4124.5
+Checking balance before transaction: $4,124.50
 Transaction Type: D
-Transaction Amount: 200
-Check balance after transaction: 4324.5
+Transaction Amount: $200.00
+Check balance after transaction: $4,324.50
 =====================================================================
 Babbage, Charles
-Checking balance before transaction: 300.0
+Checking balance before transaction: $300.00
 Transaction Type: D
-Transaction Amount: 100
-Check balance after transaction: 400.0
+Transaction Amount: $100.00
+Check balance after transaction: $400.00
 =====================================================================
 Backus, Sam
-Checking balance before transaction: 350.25
+Checking balance before transaction: $350.25
 Transaction Type: W
-Transaction Amount: 51
-Check balance after transaction: 299.25
+Transaction Amount: $51.00
+Check balance after transaction: $299.25
 Warning: Your account balance is below the $300 minimum balance limit
 =====================================================================
 Hopper, Sam
-Checking balance before transaction: 600.5
+Checking balance before transaction: $600.50
 Transaction Type: X
-Transaction Amount: 600
-Checking balance after transaction: 600.5
+Transaction Amount: $600.00
+Checking balance after transaction: $600.50
 Error:Invalid transaction type
 =====================================================================
 McCarthy, Robert
-Checking balance before transaction: 1000.0
+Checking balance before transaction: $1,000.00
 Transaction Type: R
-Transaction Amount: 0
-Checking current balance: 1000.0
+Transaction Amount: $0.00
+Checking current balance: $1,000.00
 =====================================================================
 Atanasoff, Jack
-Checking balance before transaction: 200.0
+Checking balance before transaction: $200.00
 Transaction Type: W
-Transaction Amount: 200
-Check balance after transaction: 0.0
+Transaction Amount: $200.00
+Check balance after transaction: $0.00
 Warning: Your account balance is below the $300 minimum balance limit
 =====================================================================
 Stroustrup, Anne
-Checking balance before transaction: 300.75
+Checking balance before transaction: $300.75
 Transaction Type: W
-Transaction Amount: 301
-Check balance after transaction: 300.75
+Transaction Amount: $301.00
+Check balance after transaction: $300.75
 Error:You can not take out more than you have
 =====================================================================
 Hollerith, Amanda
-Checking balance before transaction: 500.0
+Checking balance before transaction: $500.00
 Transaction Type: W
-Transaction Amount: -2
-Check balance after transaction: 500.0
+Transaction Amount: ($2.00)
+Check balance after transaction: $500.00
 Error:You can not subtract negative funds to your account
 =====================================================================
