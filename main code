@@ -1,6 +1,5 @@
 	import java.text.NumberFormat;
-    import java.util.Locale;
-    import java.io.*;
+        import java.io.*;
 	import java.util.*;
 
 		public class ATM {
