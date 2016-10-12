@@ -1,4 +1,16 @@
+	/*Programmers:Collin Palmer, Zachariah Pelletier
+ * 10/11/16
+ * COSC 111
+ * Purpose: To take account information from a file and do the math to evaluate their ending account 
+ * balance based on the transaction type they ask for, as well as print this information to a separate file
+ *  in the desired format.
+ * 
+ */
+
+
+
 	import java.text.NumberFormat;
+	import java.text.DecimalFormat;
         import java.io.*;
 	import java.util.*;
 
@@ -7,6 +19,7 @@
 
 		public static void main(String[] args) {
 			NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
+			    DecimalFormat negativenumber= new DecimalFormat("$0.00");
 				File f = null;
 				File fo=null;
 				PrintWriter fout=null;
@@ -42,7 +55,6 @@
 				fout.println(lname+" "+fname);
 				fout.println("Checking balance before transaction: "+ defaultFormat.format(beforebal));
 				fout.println("Transaction Type: "+transtype);
-				fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   switch(transtype){
       
 		   		case 'W':
@@ -50,6 +62,7 @@
 		   				if(beforebal<0)
 		   				{
 		   					afterbal=beforebal;
+		   					fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You have a negative amount in your"
 		   					+ " account cannot withdraw any funds");
@@ -57,6 +70,7 @@
 		   				else if (amount>beforebal)
 		   				{
 		   					afterbal=beforebal;
+		   					fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You can not take out more than you have");
     		 
@@ -64,6 +78,7 @@
 		   				else if(amount<0)
 		   				{
 		   					afterbal=beforebal;
+		   					fout.println("Transaction Amount:"+negativenumber.format(amount));
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You can not subtract negative"
 		   					+ " funds to your account");
@@ -72,41 +87,48 @@
 		   				{
     		  
 		   					afterbal=(beforebal-amount);
+		   					fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					
-		   					if(afterbal<minbal)
+		   					if(afterbal<minbal){
+		   					fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   				    fout.println("Warning: Your account balance is below the $300"
-		   				    + " minimum balance limit");
+		   				    + " minimum balance limit");}
 		   			   else
+		   			       fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   				   afterbal=(beforebal-amount);
 		   					}
 		   				}
 		   			break;
     	 
 
-      case 'D':
-    	  if(amount<0)
+		   case 'D':
+		   	if(amount<0)
     	  {
-    		  afterbal=beforebal; 
+    		  afterbal=beforebal;
+    		  fout.println("Transaction Amount: "+ defaultFormat.format(amount));
     		  fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
     		  fout.println("Error: You can not add negative "
     	  	  + "funds to your account");
     	  }
-    	  else
+    	  	else
     	  {
     		  afterbal=beforebal+amount;
+    		  fout.println("Transaction Amount: "+ defaultFormat.format(amount));
         	  fout.println("Check balance after transaction: "+defaultFormat.format(afterbal));
     	  }
     	  
-    	  break;
+    	  	break;
     	  
-      	case 'R':
-      		fout.println("Checking current balance: "+ defaultFormat.format(beforebal));
+      		case 'R':
+      			fout.println("Transaction Amount: "+ defaultFormat.format(amount));
+      			fout.println("Checking current balance: "+ defaultFormat.format(beforebal));
       		break;
     	  
-      default:
+      		default:
          { 
         	 afterbal=beforebal;
+        	 fout.println("Transaction Amount: "+ defaultFormat.format(amount));
         	 fout.println("Checking balance after transaction: "+ defaultFormat.format(afterbal));
         	 fout.println("Error:Invalid transaction type");
         	 break;
