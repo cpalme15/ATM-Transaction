@@ -10,8 +10,7 @@
 
 
 	import java.text.NumberFormat;
-	import java.text.DecimalFormat;
-        import java.io.*;
+    import java.io.*;
 	import java.util.*;
 
 		public class ATM {
@@ -19,7 +18,6 @@
 
 		public static void main(String[] args) {
 			NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
-			    DecimalFormat negativenumber= new DecimalFormat("$0.00");
 				File f = null;
 				File fo=null;
 				PrintWriter fout=null;
@@ -78,7 +76,7 @@
 		   				else if(amount<0)
 		   				{
 		   					afterbal=beforebal;
-		   					fout.println("Transaction Amount:"+negativenumber.format(amount));
+		   					fout.println("Transaction Amount:"+defaultFormat.format(amount));
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					fout.println("Error:You can not subtract negative"
 		   					+ " funds to your account");
@@ -91,7 +89,6 @@
 		   					fout.println("Check balance after transaction: "+ defaultFormat.format(afterbal));
 		   					
 		   					if(afterbal<minbal){
-		   					fout.println("Transaction Amount: "+ defaultFormat.format(amount));
 		   				    fout.println("Warning: Your account balance is below the $300"
 		   				    + " minimum balance limit");}
 		   			   else
